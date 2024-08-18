@@ -1,19 +1,13 @@
 <div class="position-fixed">
-  <app-toastr
-    *ngIf="toastrData.title || toastrData.message"
-    [title]="toastrData.title"
-    [message]="toastrData.message"
-    [status]="'top right'"
+  @if (toastrData.title || toastrData.message) {
+  <app-toastr [title]="toastrData.title" [message]="toastrData.message" [status]="'top right'"
     [class]="toastrData.type || 'error'"></app-toastr>
-
-  <ng-container *ngFor="let error of toastrErrors | keyvalue">
-    <app-toastr
-      *ngIf="error?.value?.length"
-      [title]="error?.key"
-      [message]="error?.value"
-      [status]="'top right'"
-      [class]="'error'"></app-toastr>
-  </ng-container>
+  }
+  @for (error of toastrErrors | keyvalue ; track error) {
+  @if (error?.value?.length) {
+  <app-toastr [title]="error?.key" [message]="error?.value" [status]="'top right'" [class]="'error'"></app-toastr>
+  }
+  }
 </div>
 <app-header></app-header>
 <div class="body-container">

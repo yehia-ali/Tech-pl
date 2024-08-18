@@ -1,41 +1,36 @@
 <header class="site-header">
-    <div class="site-identity">
-      <h1><a href="#">
+  <div class="site-identity">
+    <h1><a href="#">
         <img [src]="logoUrl" [alt]="'logo'">
         ClickTik</a></h1>
-        <ul class="nav">
-            <li><a href="#">Home</a></li> 
-          </ul>
-    
-    </div>  
-    <nav class="site-navigation">
-      <ul class="nav">
-        <ng-container *ngIf="isLoggedIn | async; else loggedOut">
-          <li>
-            <div class="search-container">
-              <img src="../../../../../assets/img/search.svg">
-              <input
-                autocomplete="off"
-                [formControl]="searchControl"
-                type="text"
-                id="search"
-                placeholder="Search"
-                (keyup)="onSearch()"
-              />
-            </div>
-          </li> 
-          <li>
-            <div class="cart-container">
-              <img src="../../../../../assets/img/Cart.svg">
-              <span>{{(cartItems | async)?.length || 0}}</span>
-            </div>
-          </li> 
-          <li><a >Account</a></li> 
-        </ng-container>
-        <ng-template #loggedOut>
-          <li><a href="#">Login</a></li>
-        </ng-template>
-    
-      </ul>
-    </nav>
-  </header>
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+    </ul>
+
+  </div>
+  <nav class="site-navigation">
+    <ul class="nav">
+      @if (isLoggedIn | async) {
+      <li>
+        <div class="search-container">
+          <img src="../../../../../assets/img/search.svg">
+          <input autocomplete="off" [formControl]="searchControl" type="text" id="search" placeholder="Search"
+            (keyup)="onSearch()" />
+        </div>
+      </li>
+      <li>
+        <div class="cart-container">
+          <img src="../../../../../assets/img/Cart.svg">
+          <span>{{(cartItems | async)?.length || 0}}</span>
+        </div>
+      </li>
+      <li><a>Account</a></li>
+      }
+      @else {
+      <li><a href="#">Login</a></li>
+
+      }
+
+    </ul>
+  </nav>
+</header>
