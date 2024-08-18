@@ -1,0 +1,33 @@
+<div class="product-card">
+    <div class="card-img" style="background-image: url({{cardInfo.thumbnail}});"></div>
+    <div class="card-body">
+        <h3>{{cardInfo.title | truncate: 20}}</h3>
+        <p>{{cardInfo.description | truncate: 45}}</p>
+        <div class="price">
+            <p class="old-price">549 
+                <span>USD</span>
+            </p>
+            <p class="new-price">{{cardInfo.price}} 
+                <span>USD</span>
+            </p>
+        </div>
+        <div class="product-info">
+            <p>Brand:</p>
+            <p class="bold">{{cardInfo.brand}} </p>
+        </div>
+        <div class="product-info">
+            <p>Category:</p>
+            <p class="bold">{{cardInfo.category}}</p>
+        </div>
+        <div class="product-info">
+            <p>In stock:</p>
+            <p class="bold">{{cardInfo.stock}}</p>
+        </div>
+        <div class="product-rate">
+            <img [src]="'../../../../../assets/img/Star.svg'">
+            <p>{{cardInfo.rating}}</p>
+            <p class="muted">({{cardInfo.reviews.length}})</p>
+        </div>
+        <button>ADD TO CART</button>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-block: 5em;
+  .login-body {
+    h2 {
+      font-size: 30px;
+      font-weight: 600;
+      color: #101828;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #667085;
+    }
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+    margin-block-end: 16px;
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #344054;
+    }
+    input {
+      padding: 10px 14px;
+      border: 1px solid #D0D5DD;
+      border-radius: 8px;
+    }
+  }
+  button {
+    display: block;
+    padding: 10px 18px;
+    background: #41CCCC;
+    color: #344054;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+
+  }
+}

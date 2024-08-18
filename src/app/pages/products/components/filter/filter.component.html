@@ -1,0 +1,12 @@
+<div class="filter">
+<h3>Products</h3>
+<ul>
+    <li>
+        <label><input type='radio' name="cat" (change)="onCategoryChange('all')"/> All </label>
+    </li>
+
+    <li *ngFor="let category of categories">
+        <label><input type='radio' name="cat" (change)="onCategoryChange(category)"/> {{category}} </label>
+    </li>
+</ul>
+</div>

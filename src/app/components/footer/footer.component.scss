@@ -1,0 +1,26 @@
+.site-footer {
+    padding: 2em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5em;
+    background-color: #1D2939;
+    .footer-logo {
+      display: flex;
+      gap: 1em;
+      h1 {
+        font-size: 1.5em;
+        margin: 0.6em 0;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          color: #fff;
+        }
+      }
+    }    
+    p {
+        color: #98A2B3;
+    }
+  }
+  

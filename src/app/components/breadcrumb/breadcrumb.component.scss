@@ -1,0 +1,23 @@
+.breadcrumb {
+  ol {
+    padding-inline-start: 0;
+    li {
+      display: inline-block;
+      a {
+        color: #1E1E1E;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      &:last-of-type {
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    li:not(:first-child):before {
+      content: "/";
+      padding-inline: 5px;
+    }
+  }
+}

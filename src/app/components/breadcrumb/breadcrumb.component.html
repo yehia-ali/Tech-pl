@@ -1,0 +1,17 @@
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li
+      class="breadcrumb-item"
+      *ngFor="let item of breadCrumbStack; let idx = index; let last = last"
+    >
+      <a
+        [routerLink]="item.url"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [queryParamsHandling]="idx === 0 ? '' : 'preserve'"
+      >
+        {{ item.value }}
+      </a>
+    </li>
+  </ol>
+</nav>

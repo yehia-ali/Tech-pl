@@ -1,0 +1,28 @@
+<div class="product-container">
+  <h2>iPhone</h2>
+  <app-breadcrumb [breadCrumbStack]="breadCrumbData"></app-breadcrumb>
+  <div class="d-flex">
+    <div class="w-20">
+      <app-filter (categoryChanged)="onCategoryChange($event)"></app-filter>
+    </div>
+    <div class="w-80">
+      <ng-container *ngIf="searchMode">
+        <div class="d-flex space-between m-0">
+          <p>({{filteredProducts.length}}) Products Found</p>
+          <p><span class="bold">Sort By:</span> Popularity</p>
+        </div>
+        <div class="text-center" *ngIf="filteredProducts.length == 0">
+          <h2> No Product Found</h2>
+        </div>
+      </ng-container>
+      <div class="d-flex m-0">
+        <div class="w-33" *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 9, currentPage: currentPage  }">
+          <app-product-card [cardInfo]="product"></app-product-card>
+        </div>
+      </div>
+      <div class="pagination">
+        <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+    </div>
+    </div>
+  </div>
+</div>
