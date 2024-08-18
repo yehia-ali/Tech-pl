@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pleny:build:production"
+              "buildTarget": "pleny:build:production"
             },
             "development": {
-              "browserTarget": "pleny:build:development"
+              "buildTarget": "pleny:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pleny:build"
+            "buildTarget": "pleny:build"
           }
         },
         "test": {
