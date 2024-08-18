@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Helvetica;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #667085;
+}
+.position-fixed {
+  position: fixed;
+  inset-inline-end: 1.75rem;
+  z-index: 1;
+}
+.ngx-pagination {
+  padding: 0;
+  .current {
+    background-color: #41CCCC !important;
+    border-radius: 3px;
+  }
+}

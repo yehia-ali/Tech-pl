@@ -57,7 +57,6 @@ export class ProductComponent implements OnInit {
       });
   }
   onPageChange(page: number) {
-    debugger
     this.currentPage = page;
   }
   onCategoryChange(selectedCategory: string) {
@@ -70,18 +69,20 @@ export class ProductComponent implements OnInit {
           this.filteredProducts = res.products;
         });
     }
+    this.currentPage = 1;
   }
   onSearch(query: string) {
-    debugger
     if (query) {
       this.productsService.searchProducts(query).subscribe((res: any) => {
         this.filteredProducts = res.products;
         this.searchMode = true;
+        this.currentPage = 1;
       });
     } else {
       this.filteredProducts = this.dataResponse.products;
       this.searchMode = false;
     }
+    this.currentPage = 1;
   }
 
 }

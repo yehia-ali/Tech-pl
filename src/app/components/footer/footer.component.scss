@@ -5,6 +5,9 @@
     align-items: center;
     padding-inline: 5em;
     background-color: #1D2939;
+    @media (max-width: 768px) {
+      padding-inline: 1.5em;
+    }
     .footer-logo {
       display: flex;
       gap: 1em;

@@ -5,14 +5,20 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   providedIn: 'root'
 })
 export class HeaderService {
+  private isLoggedInSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('accessToken'));
+  isLoggedIn = this.isLoggedInSubject.asObservable();
   private searchSubject = new BehaviorSubject<string>('');
   searchTerm = this.searchSubject.asObservable();
-  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
-  isLoggedIn = this.isLoggedInSubject.asObservable();
-  setLoggedIn(status: boolean) {
-    this.isLoggedInSubject.next(status);
+
+  setLoginStatus(isLoggedIn: boolean): void {
+    if (!isLoggedIn) {
+      localStorage.removeItem('accessToken');
+    } 
+    this.isLoggedInSubject.next(isLoggedIn);
   }
+
   setSearchTerm(term: string) {
     this.searchSubject.next(term);
   }
+  
 }

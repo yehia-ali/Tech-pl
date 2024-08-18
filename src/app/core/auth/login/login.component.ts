@@ -31,9 +31,8 @@ export class LoginComponent {
       this.loginService
         .submitLogin(this.loginFormGroup.value)
         .subscribe((res: any) => {
-          debugger
+          this.headerService.setLoginStatus(true);
           this.tokens.tokens.next(res?.token);
-          this.headerService.setLoggedIn(true);
           this.router.navigate(['dashboard/product'])
         });
     

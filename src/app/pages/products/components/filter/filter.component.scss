@@ -12,8 +12,50 @@
         list-style: none;
         padding: 0;
 
-        input {
-            accent-color: #41CCCC;
-        }
     }
+}
+
+
+.form-control {
+    font-size: 1em;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.form-control+.form-control {
+    margin-top: 1em;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: #1E1E1E;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid #41CCCC;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #41CCCC;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
 }
